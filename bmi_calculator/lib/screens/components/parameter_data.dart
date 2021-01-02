@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
 
 import '../../models/human.dart';
-import './custom_button.dart';
+import 'custom_button.dart';
 
-class WeightData extends StatefulWidget {
+class ParameterData extends StatefulWidget {
+  //================================ Properties ================================
+  final String title;
   //================================ Constructor ===============================
-  const WeightData({
-    Key key,
-  }) : super(key: key);
+  const ParameterData(
+    this.title,
+  );
   //==========================================================================
   @override
   _WeightDataState createState() => _WeightDataState();
   //==========================================================================
 }
 
-class _WeightDataState extends State<WeightData> {
+class _WeightDataState extends State<ParameterData> {
+  // final  data =
+  //     widget.title == 'WEIGHT' ? Human.userWeight : Human.userAge;
   int _loopCounter = 1;
+
   //================================== Methods =================================
   void buttonPress({
     @required bool shouldAdd,
@@ -34,27 +39,36 @@ class _WeightDataState extends State<WeightData> {
     //     });
     // } else
     setState(() {
-      // the value to change is userWeight
-      final val = Human.userWeight;
+      // the value to change is based on the title
       // check to see if I pressd on 'Plus' or 'Minus' button
       // and set the human data to the appropriate value
-      Human.setUserWeight(
-        shouldAdd ? val + 0.5 : val - 0.5,
-      );
+      switch (widget.title) {
+        case 'WEIGHT':
+          Human.setUserWeight(
+            shouldAdd ? Human.userWeight + 0.5 : Human.userWeight - 0.5,
+          );
+          break;
+        case 'AGE':
+          Human.setUserAge(
+            shouldAdd ? Human.userAge + 0.5 : Human.userAge - 0.5,
+          );
+          break;
+        default:
+      }
     });
   }
   //==========================================================================
 
   @override
   Widget build(BuildContext context) {
-//================================ Parameters ==============================
+    //================================ Parameters ==============================
     final MediaQueryData _mediaQuery = MediaQuery.of(context);
-//==========================================================================
+    //==========================================================================
     return Container(
       child: Column(
         children: [
           Text(
-            '${Human.userWeight}',
+            '${widget.title == 'WEIGHT' ? Human.userWeight : Human.userAge}',
             style:
                 Theme.of(context).textTheme.headline1.copyWith(fontSize: 45.0),
           ),

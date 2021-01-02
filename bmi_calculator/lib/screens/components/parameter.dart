@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
-import './weight_data.dart';
+import './parameter_data.dart';
 
-class Weight extends StatelessWidget {
+class Parameter extends StatelessWidget {
   //================================ Parameters ================================
+  final String title;
   //================================ Constructor ===============================
-  const Weight({Key key}) : super(key: key);
-
+  const Parameter(
+    this.title,
+  );
+  //============================================================================
   @override
   Widget build(BuildContext context) {
     //================================ Parameters ==============================
@@ -23,13 +26,13 @@ class Weight extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(
-            'WEIGHT',
+            '$title',
             style: Theme.of(context)
                 .textTheme
                 .headline1
                 .copyWith(color: Colors.grey),
           ),
-          WeightData(),
+          ParameterData(title),
         ],
       ),
     );

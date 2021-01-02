@@ -6,16 +6,11 @@ import './components/gender_row.dart';
 import './components/info_row.dart';
 
 class HomeScreen extends StatelessWidget {
-  //================================= Methods ==================================
-  // void calculateResult({bool isMale, double height, double weight, int age}) {}
-  //============================================================================
-
   @override
   Widget build(BuildContext context) {
     //================================ Parameters ==============================
     final MediaQueryData _mediaQuery = MediaQuery.of(context);
     //==========================================================================
-
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(

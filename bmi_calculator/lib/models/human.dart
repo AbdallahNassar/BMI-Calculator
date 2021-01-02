@@ -8,7 +8,7 @@ class Human {
   static bool _isMale = false;
   static double _height = 143.0;
   static double _weight = 90.0;
-  static int _age = 21;
+  static double _age = 21;
   //================================ methods ===============================
   static void setUserGender({bool isUserMale}) {
     if (isUserMale != null) {
@@ -38,13 +38,13 @@ class Human {
 
   static double get userWeight => _weight;
   //============================================================================
-  static void setUserAge(int userAge) {
+  static void setUserAge(double userAge) {
     if (userAge != null && userAge >= 1 && userAge <= 130) {
       _age = userAge;
       print('user age = $userAge');
     }
   }
 
-  static int get userAge => _age;
+  static double get userAge => _age;
   //============================================================================
 }

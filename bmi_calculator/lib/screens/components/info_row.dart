@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './age.dart';
-import './weight.dart';
+import './parameter.dart';
 
 class InfoRow extends StatelessWidget {
   //================================ Constructor ===============================
@@ -19,9 +18,9 @@ class InfoRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Weight(),
+          Parameter('WEIGHT'),
           SizedBox(width: _mediaQuery.size.width * 0.015),
-          Age(),
+          Parameter('AGE'),
         ],
       ),
     );
