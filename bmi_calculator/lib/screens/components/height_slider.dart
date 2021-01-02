@@ -22,30 +22,39 @@ class _HeightSliderState extends State<HeightSlider> {
       child: Column(
         children: [
           SizedBox(
-            height: _mediaQuery.size.height * 0.02,
+            height: _mediaQuery.orientation == Orientation.portrait
+                ? _mediaQuery.size.height * 0.02
+                : _mediaQuery.size.height * 0.01,
           ),
-          Text(
-            '${Human.userHeight.toStringAsFixed(1)} cm',
-            style: Theme.of(context).textTheme.headline1.copyWith(
-                  fontSize: 45.0,
-                ),
+          Expanded(
+            child: Text(
+              '${Human.userHeight.toStringAsFixed(1)} cm',
+              style: Theme.of(context).textTheme.headline1.copyWith(
+                    fontSize: _mediaQuery.orientation == Orientation.landscape
+                        ? 20.0
+                        : 45.0,
+                  ),
+            ),
           ),
-          Slider(
-            value: Human.userHeight.toDouble(),
-            onChanged: (double newValue) {
-              Human.setUserHeight(newValue);
-              setState(() {
+          Container(
+            height: _mediaQuery.size.height * 0.08,
+            child: Slider(
+              value: Human.userHeight.toDouble(),
+              onChanged: (double newValue) {
                 Human.setUserHeight(newValue);
-              });
-            },
-            min: 20.0,
-            max: 300.0,
-            // 300 - 20 = 280 possible values
-            // so 560 divisions to only show INT and INT.Half
-            // 10 and 10.5 then 11, and so on.
-            divisions: 560,
-            activeColor: Colors.white,
-            inactiveColor: Colors.grey.shade600,
+                setState(() {
+                  Human.setUserHeight(newValue);
+                });
+              },
+              min: 20.0,
+              max: 300.0,
+              // 300 - 20 = 280 possible values
+              // so 560 divisions to only show INT and INT.Half
+              // 10 and 10.5 then 11, and so on.
+              divisions: 560,
+              activeColor: Colors.white,
+              inactiveColor: Colors.grey.shade600,
+            ),
           )
         ],
       ),

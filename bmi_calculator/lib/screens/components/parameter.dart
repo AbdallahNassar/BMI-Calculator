@@ -22,19 +22,37 @@ class Parameter extends StatelessWidget {
         borderRadius: BorderRadius.circular(5),
         color: Theme.of(context).cardColor,
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Text(
-            '$title',
-            style: Theme.of(context)
-                .textTheme
-                .headline1
-                .copyWith(color: Colors.grey),
-          ),
-          ParameterData(title),
-        ],
-      ),
+      child: _mediaQuery.orientation == Orientation.landscape
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: _mediaQuery.size.width * 0.03,
+                ),
+                Text(
+                  '$title',
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline1
+                      .copyWith(color: Colors.grey),
+                  textAlign: TextAlign.center,
+                ),
+                Expanded(child: ParameterData(title)),
+              ],
+            )
+          : Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  '$title',
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline1
+                      .copyWith(color: Colors.grey),
+                ),
+                ParameterData(title),
+              ],
+            ),
     );
   }
 }

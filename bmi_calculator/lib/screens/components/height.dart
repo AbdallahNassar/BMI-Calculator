@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './height_slider.dart';
+import './height_landscape.dart';
+import './height_portrait.dart';
 
 class Height extends StatelessWidget {
   //================================ Constructor ===============================
@@ -19,22 +20,9 @@ class Height extends StatelessWidget {
       ),
       height: _mediaQuery.size.height * 0.2,
       width: _mediaQuery.size.width * 0.85,
-      child: Column(
-        children: [
-          SizedBox(
-            height: _mediaQuery.size.height * 0.025,
-          ),
-          Expanded(
-            child: Text(
-              'HEIGHT',
-              style: Theme.of(context).textTheme.headline1.copyWith(
-                    color: Colors.grey,
-                  ),
-            ),
-          ),
-          HeightSlider(),
-        ],
-      ),
+      child: _mediaQuery.orientation == Orientation.landscape
+          ? HeightLandscape()
+          : HeightPortrait(),
     );
   }
 }
