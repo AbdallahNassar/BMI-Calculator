@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import './height_slider.dart';
+import './weight_data.dart';
 
-class Height extends StatelessWidget {
+class Weight extends StatelessWidget {
+  //================================ Parameters ================================
   //================================ Constructor ===============================
-  const Height({Key key}) : super(key: key);
-  //============================================================================
+  const Weight({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,26 +13,23 @@ class Height extends StatelessWidget {
     final MediaQueryData _mediaQuery = MediaQuery.of(context);
     //==========================================================================
     return Container(
+      height: _mediaQuery.size.height * 0.24,
+      width: _mediaQuery.size.width * 0.413,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
         color: Theme.of(context).cardColor,
       ),
-      height: _mediaQuery.size.height * 0.2,
-      width: _mediaQuery.size.width * 0.85,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SizedBox(
-            height: _mediaQuery.size.height * 0.025,
+          Text(
+            'WEIGHT',
+            style: Theme.of(context)
+                .textTheme
+                .headline1
+                .copyWith(color: Colors.grey),
           ),
-          Expanded(
-            child: Text(
-              'HEIGHT',
-              style: Theme.of(context).textTheme.headline1.copyWith(
-                    color: Colors.grey,
-                  ),
-            ),
-          ),
-          HeightSlider(),
+          WeightData(),
         ],
       ),
     );

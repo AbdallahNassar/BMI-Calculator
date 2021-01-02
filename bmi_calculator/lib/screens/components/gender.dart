@@ -46,6 +46,7 @@ class Gender extends StatelessWidget {
         0xFF1d1f33,
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
             'assets/images/${sex.toLowerCase()}.png',

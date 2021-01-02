@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/models/human.dart';
 import 'package:flutter/material.dart';
 
 class BMIButton extends StatelessWidget {
@@ -9,6 +10,8 @@ class BMIButton extends StatelessWidget {
     final MediaQueryData _mediaQuery = MediaQuery.of(context);
 //==========================================================================
     return FlatButton(
+      height: _mediaQuery.size.height * 0.1,
+      minWidth: _mediaQuery.size.width,
       onPressed: () {},
       child: Text(
         'CALCULATE YOUR BMI',
@@ -17,7 +20,6 @@ class BMIButton extends StatelessWidget {
       color: Color(
         0xffeb1555,
       ),
-      minWidth: _mediaQuery.size.width,
     );
   }
 }

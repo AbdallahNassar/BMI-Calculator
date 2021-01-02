@@ -14,6 +14,9 @@ class BMICalculator extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          primaryColor: Color(0xFF090b1e),
+          cardColor: Color(0xff111428),
+          accentColor: Color(0xffeb1555),
           primarySwatch: Colors.blue,
           // This makes the visual density adapt to the platform that you run
           // the app on. For desktop platforms, the controls will be smaller and

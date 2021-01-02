@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/models/human.dart';
 import 'package:flutter/material.dart';
 
 import './gender.dart';
@@ -14,12 +15,10 @@ class GenderRow extends StatefulWidget {
 }
 
 class _GenderRowState extends State<GenderRow> {
-  //================================ Properties ================================
-  bool _isMale = true;
   //================================ Methods ===================================
   void changeSelection(bool isMale) {
     setState(() {
-      _isMale = isMale;
+      Human.setUserGender(isUserMale: isMale);
     });
   }
 
@@ -31,13 +30,14 @@ class _GenderRowState extends State<GenderRow> {
     //==========================================================================
     return Container(
       width: _mediaQuery.size.width * 0.85,
+      height: _mediaQuery.size.height * 0.18,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
             child: Gender(
               sex: 'Male',
-              isSelected: _isMale,
+              isSelected: Human.isUserMale,
               function: changeSelection,
             ),
           ),
@@ -48,7 +48,7 @@ class _GenderRowState extends State<GenderRow> {
             child: Gender(
               sex: 'Female',
               // send the opposite of 'ismale' to use only ONE boolean
-              isSelected: !_isMale,
+              isSelected: !Human.isUserMale,
               function: changeSelection,
             ),
           ),
