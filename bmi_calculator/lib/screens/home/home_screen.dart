@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/custom_app_bar.dart';
 import './components/height.dart';
-import './components/bmi_button.dart';
+import '../../widgets/bmi_button.dart';
 import './components/gender_row.dart';
 import './components/info_row.dart';
 
 class HomeScreen extends StatelessWidget {
+  //================================ Properties ================================
+  static const String routeName = '/home';
+  //================================ Constructor ===============================
   @override
   Widget build(BuildContext context) {
     //================================ Parameters ==============================
@@ -13,13 +17,9 @@ class HomeScreen extends StatelessWidget {
     //==========================================================================
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      appBar: AppBar(
-        backgroundColor: Color(0xFF0A0D22),
-        title: Text(
-          'BMI CALCULATOR',
-          style: Theme.of(context).textTheme.headline1,
-        ),
-        leading: Icon(Icons.menu),
+      appBar: PreferredSize(
+        child: CustomAppBar(),
+        preferredSize: Size(double.infinity, _mediaQuery.padding.top),
       ),
       body: SafeArea(
         child: Container(
@@ -31,7 +31,12 @@ class HomeScreen extends StatelessWidget {
               GenderRow(),
               Height(),
               InfoRow(),
-              BMIButton(),
+              BMIButton(
+                // will check if null, then will use the function inside the
+                // button, for better use of the encapsulation principle
+                funciton: null,
+                title: 'CALCULATE YOUR BMI',
+              ),
             ],
           ),
         ),

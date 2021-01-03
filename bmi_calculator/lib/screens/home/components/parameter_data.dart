@@ -84,8 +84,8 @@ class _WeightDataState extends State<ParameterData> {
             '${widget.title == 'WEIGHT' ? Human.userWeight : Human.userAge}',
             style: Theme.of(context).textTheme.headline1.copyWith(
                   fontSize: _mediaQuery.orientation == Orientation.landscape
-                      ? 25.0
-                      : 45.0,
+                      ? _mediaQuery.size.width * 0.05
+                      : _mediaQuery.size.width * 0.1,
                 ),
           ),
           SizedBox(

@@ -42,9 +42,7 @@ class Gender extends StatelessWidget {
           _mediaQuery.size.width * 0.02,
         ),
       ),
-      color: Color(
-        0xFF1d1f33,
-      ),
+      color: Theme.of(context).canvasColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

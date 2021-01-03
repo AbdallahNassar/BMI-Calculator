@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import './screens/result/result_screen.dart';
 import './screens/home/home_screen.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class BMICalculator extends StatelessWidget {
           primaryColor: Color(0xFF090b1e),
           cardColor: Color(0xff111428),
           accentColor: Color(0xffeb1555),
+          canvasColor: Color(0xFF1d1f33),
           primarySwatch: Colors.blue,
           // This makes the visual density adapt to the platform that you run
           // the app on. For desktop platforms, the controls will be smaller and
@@ -29,7 +31,11 @@ class BMICalculator extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           )),
-      home: HomeScreen(),
+      home: ResultScreen(),
+      routes: {
+        HomeScreen.routeName: (_) => HomeScreen(),
+        ResultScreen.routeName: (_) => ResultScreen(),
+      },
     );
   }
 }
