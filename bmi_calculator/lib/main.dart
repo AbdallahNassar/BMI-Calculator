@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import './screens/home_screen.dart';
+import './screens/home/home_screen.dart';
 
 void main() {
   runApp(BMICalculator());

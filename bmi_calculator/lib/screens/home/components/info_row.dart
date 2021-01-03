@@ -18,9 +18,10 @@ class InfoRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Parameter('WEIGHT'),
+          // expanded to avoid any overflowing problems.
+          Expanded(child: Parameter('WEIGHT')),
           SizedBox(width: _mediaQuery.size.width * 0.015),
-          Parameter('AGE'),
+          Expanded(child: Parameter('AGE')),
         ],
       ),
     );

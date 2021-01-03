@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/human.dart';
+import '../../../models/human.dart';
 import 'custom_button.dart';
 
 class ParameterData extends StatefulWidget {
@@ -17,10 +17,6 @@ class ParameterData extends StatefulWidget {
 }
 
 class _WeightDataState extends State<ParameterData> {
-  // final  data =
-  //     widget.title == 'WEIGHT' ? Human.userWeight : Human.userAge;
-  int _loopCounter = 1;
-
   //================================== Methods =================================
   void buttonPress({
     @required bool shouldAdd,
