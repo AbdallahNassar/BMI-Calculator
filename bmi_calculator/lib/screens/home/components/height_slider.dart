@@ -31,7 +31,7 @@ class _HeightSliderState extends State<HeightSlider> {
               '${Human.userHeight.toStringAsFixed(1)} cm',
               style: Theme.of(context).textTheme.headline1.copyWith(
                     fontSize: _mediaQuery.orientation == Orientation.landscape
-                        ? _mediaQuery.size.width * 0.05
+                        ? _mediaQuery.size.width * 0.024
                         : _mediaQuery.size.width * 0.1,
                   ),
             ),

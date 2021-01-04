@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/app_title.dart';
 import '../../screens/home/home_screen.dart';
 import '../../widgets/bmi_button.dart';
-import '../../widgets/custom_app_bar.dart';
 import './components/result_data.dart';
 
 class ResultScreen extends StatelessWidget {
@@ -18,10 +18,6 @@ class ResultScreen extends StatelessWidget {
 //==========================================================================
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      appBar: PreferredSize(
-        preferredSize: Size(double.infinity, _mediaQuery.padding.top),
-        child: CustomAppBar(),
-      ),
       body: SafeArea(
         child: Container(
           // to take the height & width of the parent, the safe area
@@ -30,6 +26,7 @@ class ResultScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              AppTitle(),
               Container(
                 // color: Colors.white,
                 width: _mediaQuery.size.width * 0.85,
@@ -50,8 +47,10 @@ class ResultScreen extends StatelessWidget {
                 ),
               ),
               Container(
+                padding: EdgeInsets.symmetric(
+                    vertical: _mediaQuery.size.width * 0.01),
                 child: ResultData(),
-                height: _mediaQuery.size.height * 0.6,
+                height: _mediaQuery.size.height * 0.5,
                 width: _mediaQuery.size.width * 0.85,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
