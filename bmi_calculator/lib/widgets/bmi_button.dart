@@ -27,11 +27,11 @@ class BMIButton extends StatelessWidget {
       onPressed: funciton == null ? () => calculateBMI(context) : funciton,
       child: Text(
         title,
-        style: Theme.of(context).textTheme.headline1,
+        style: Theme.of(context).textTheme.headline1.copyWith(
+              fontWeight: FontWeight.w900,
+            ),
       ),
-      color: Color(
-        0xffeb1555,
-      ),
+      color: Theme.of(context).accentColor,
     );
   }
 }

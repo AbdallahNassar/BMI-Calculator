@@ -13,9 +13,9 @@ class ResultScreen extends StatelessWidget {
   //============================================================================
   @override
   Widget build(BuildContext context) {
-//================================ Parameters ==============================
+    //================================ Parameters ==============================
     final MediaQueryData _mediaQuery = MediaQuery.of(context);
-//==========================================================================
+    //==========================================================================
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body: SafeArea(
@@ -60,7 +60,7 @@ class ResultScreen extends StatelessWidget {
                 ),
               ),
               BMIButton(
-                title: 'RE-CALCULATE YOUR BMI',
+                title: 'RE-CALCULATE',
                 funciton: () => Navigator.of(context).pushReplacementNamed(
                   HomeScreen.routeName,
                 ),

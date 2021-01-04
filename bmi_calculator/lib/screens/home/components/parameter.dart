@@ -16,10 +16,12 @@ class Parameter extends StatelessWidget {
     final MediaQueryData _mediaQuery = MediaQuery.of(context);
     //==========================================================================
     return Container(
-      height: _mediaQuery.size.height * 0.22,
+      height: _mediaQuery.size.height * 0.224,
       width: _mediaQuery.size.width * 0.413,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(
+          _mediaQuery.size.width * 0.02,
+        ),
         color: Theme.of(context).cardColor,
       ),
       child: _mediaQuery.orientation == Orientation.landscape
@@ -43,6 +45,9 @@ class Parameter extends StatelessWidget {
           : Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(
+                  height: _mediaQuery.size.width * 0.03,
+                ),
                 Text(
                   '$title',
                   style: Theme.of(context)

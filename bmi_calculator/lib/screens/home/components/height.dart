@@ -15,7 +15,9 @@ class Height extends StatelessWidget {
     //==========================================================================
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(
+          _mediaQuery.size.width * 0.02,
+        ),
         color: Theme.of(context).cardColor,
       ),
       height: _mediaQuery.size.height * 0.2,

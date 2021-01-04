@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../helpers/calculator_brain.dart';
+
 class ResultData extends StatelessWidget {
   const ResultData({Key key}) : super(key: key);
 
@@ -7,6 +9,8 @@ class ResultData extends StatelessWidget {
   Widget build(BuildContext context) {
     //================================ Parameters ==============================
     final MediaQueryData _mediaQuery = MediaQuery.of(context);
+    final Map<String, dynamic> bmiResultFeedBack =
+        CalculatorBrain.getBMIResult();
     //==========================================================================
     return Container(
       // to use the dimenstions of the parent
@@ -16,16 +20,21 @@ class ResultData extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(
-            'NORMAL',
-            style: Theme.of(context).textTheme.headline1,
-          ),
-          Text(
-            '22.5',
+            bmiResultFeedBack['category'],
             style: Theme.of(context).textTheme.headline1.copyWith(
-                  fontSize: _mediaQuery.orientation == Orientation.portrait
-                      ? _mediaQuery.size.width * 0.2
-                      : _mediaQuery.size.width * 0.05,
+                  color: bmiResultFeedBack['color'],
+                  fontWeight: FontWeight.w900,
                 ),
+          ),
+          FittedBox(
+            child: Text(
+              bmiResultFeedBack['result'].toStringAsFixed(2),
+              style: Theme.of(context).textTheme.headline1.copyWith(
+                    fontSize: _mediaQuery.orientation == Orientation.portrait
+                        ? _mediaQuery.size.width * 0.2
+                        : _mediaQuery.size.width * 0.05,
+                  ),
+            ),
           ),
           Text.rich(
             TextSpan(
@@ -35,7 +44,7 @@ class ResultData extends StatelessWidget {
                   ),
               children: [
                 TextSpan(
-                  text: '22.5 ~ 10 kg/m2',
+                  text: '18.5 ~ 25 kg/m2',
                   style: Theme.of(context).textTheme.headline1,
                 ),
               ],
@@ -43,11 +52,10 @@ class ResultData extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           Container(
-            height: _mediaQuery.size.height * 0.07,
             padding:
-                EdgeInsets.symmetric(horizontal: _mediaQuery.size.width * 0.02),
+                EdgeInsets.symmetric(horizontal: _mediaQuery.size.width * 0.03),
             child: Text(
-              'you have a normal body weight. Good Job!',
+              bmiResultFeedBack['advice'],
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline1,
             ),

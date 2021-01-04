@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/human.dart';
-import 'custom_button.dart';
+import './custom_button.dart';
 
 class ParameterData extends StatefulWidget {
   //================================ Properties ================================
@@ -88,9 +88,10 @@ class _WeightDataState extends State<ParameterData> {
                       : _mediaQuery.size.width * 0.1,
                 ),
           ),
-          SizedBox(
-            height: _mediaQuery.size.height * 0.02,
-          ),
+          if (_mediaQuery.orientation == Orientation.portrait)
+            SizedBox(
+              height: _mediaQuery.size.height * 0.02,
+            ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

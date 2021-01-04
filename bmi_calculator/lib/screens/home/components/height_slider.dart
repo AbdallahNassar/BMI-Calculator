@@ -32,28 +32,27 @@ class _HeightSliderState extends State<HeightSlider> {
               style: Theme.of(context).textTheme.headline1.copyWith(
                     fontSize: _mediaQuery.orientation == Orientation.landscape
                         ? _mediaQuery.size.width * 0.024
-                        : _mediaQuery.size.width * 0.1,
+                        : _mediaQuery.size.width * 0.12,
                   ),
             ),
           ),
-          Container(
-            height: _mediaQuery.size.height * 0.08,
-            child: Slider(
-              value: Human.userHeight.toDouble(),
-              onChanged: (double newValue) {
-                Human.setUserHeight(newValue);
-                setState(() {
+          Expanded(
+            child: Container(
+              child: Slider(
+                value: Human.userHeight.toDouble(),
+                onChanged: (double newValue) {
                   Human.setUserHeight(newValue);
-                });
-              },
-              min: 20.0,
-              max: 300.0,
-              // 300 - 20 = 280 possible values
-              // so 560 divisions to only show INT and INT.Half
-              // 10 and 10.5 then 11, and so on.
-              divisions: 560,
-              activeColor: Colors.white,
-              inactiveColor: Colors.grey.shade600,
+                  setState(() {
+                    Human.setUserHeight(newValue);
+                  });
+                },
+                min: 20.0,
+                max: 300.0,
+                // 300 - 20 = 280 possible values
+                // so 560 divisions to only show INT and INT.Half
+                // 10 and 10.5 then 11, and so on.
+                divisions: 560,
+              ),
             ),
           )
         ],
