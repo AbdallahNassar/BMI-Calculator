@@ -3,10 +3,14 @@
 Flutter Mobile Application for Android/IOS
 
 Calculate your Body Mass Index, based on information from this Wikipedia page,
+
     => Link : https://en.wikipedia.org/wiki/Body_mass_index.
 
-Design Credits goes to : Ruben 
+
+Design Credits goes to : Ruben Vaalt
+
     => Link : https://dribbble.com/shots/4585382-Simple-BMI-Calculator
+    
 
 <img src="1.png" height ="300" >
 <img src="2.png" height ="300" >
