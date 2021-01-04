@@ -14,7 +14,7 @@ class AppTitle extends StatelessWidget {
           : _mediaQuery.size.height * 0.03,
       child: FittedBox(
         fit: BoxFit.fitHeight,
-        child: Text(
+        child:  Text(
           'BMI Calculator',
           style: Theme.of(context).textTheme.headline1,
         ),

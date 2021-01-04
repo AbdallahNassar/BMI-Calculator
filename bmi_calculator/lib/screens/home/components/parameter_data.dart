@@ -69,7 +69,7 @@ class _WeightDataState extends State<ParameterData> {
     return Container(
       height: _mediaQuery.orientation == Orientation.landscape
           ? _mediaQuery.size.height * 0.22
-          : _mediaQuery.size.height * 0.18,
+          : _mediaQuery.size.height * 0.2,
       width: _mediaQuery.orientation == Orientation.landscape
           ? _mediaQuery.size.width * 0.31
           : _mediaQuery.size.width * 0.38,

@@ -20,7 +20,7 @@ class Height extends StatelessWidget {
         ),
         color: Theme.of(context).cardColor,
       ),
-      height: _mediaQuery.size.height * 0.2,
+      height: _mediaQuery.size.height * 0.21,
       width: _mediaQuery.size.width * 0.85,
       child: _mediaQuery.orientation == Orientation.landscape
           ? HeightLandscape()

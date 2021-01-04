@@ -28,6 +28,9 @@ class BMIButton extends StatelessWidget {
       child: Text(
         title,
         style: Theme.of(context).textTheme.headline1.copyWith(
+              fontSize: _mediaQuery.orientation == Orientation.landscape
+                  ? _mediaQuery.size.width * 0.025
+                  : _mediaQuery.size.width * 0.05,
               fontWeight: FontWeight.w900,
             ),
       ),

@@ -1,6 +1,6 @@
-import 'package:bmi_calculator/models/human.dart';
 import 'package:flutter/material.dart';
 
+import '../../../models/human.dart';
 import './gender.dart';
 
 class GenderRow extends StatefulWidget {

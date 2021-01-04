@@ -16,7 +16,8 @@ class Parameter extends StatelessWidget {
     final MediaQueryData _mediaQuery = MediaQuery.of(context);
     //==========================================================================
     return Container(
-      height: _mediaQuery.size.height * 0.224,
+      //TODO: here
+      height: _mediaQuery.size.height * 0.26,
       width: _mediaQuery.size.width * 0.413,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
@@ -46,7 +47,7 @@ class Parameter extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: _mediaQuery.size.width * 0.03,
+                  height: _mediaQuery.size.width * 0.029,
                 ),
                 Text(
                   '$title',
