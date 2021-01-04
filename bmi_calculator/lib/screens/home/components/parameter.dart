@@ -16,7 +16,6 @@ class Parameter extends StatelessWidget {
     final MediaQueryData _mediaQuery = MediaQuery.of(context);
     //==========================================================================
     return Container(
-      //TODO: here
       height: _mediaQuery.size.height * 0.26,
       width: _mediaQuery.size.width * 0.413,
       decoration: BoxDecoration(
